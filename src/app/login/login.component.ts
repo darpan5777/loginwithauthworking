@@ -26,16 +26,65 @@ export class LoginComponent implements OnInit {
       password:['']
     })
     if (this.AuthenticationService.isLoggedIn()) {
-      this.router.navigate(['admin']);
+      
+      if(this.AuthenticationService.getToken()==='admin'){
+        debugger
+        this.router.navigate(['admin']);
+      }
+      else if(this.AuthenticationService.getToken()==='mentor'){
+        debugger
+        this.router.navigate(['admin/mentor']);
+      }
+      else if(this.AuthenticationService.getToken()==='intern'){
+        debugger
+        this.router.navigate(['admin/intern']);
+      }
+     
     }
   }
   
-  login(): void {
+  public login(): void {
     if (this.loginForm.valid) {
-      this.AuthenticationService.login(this.loginForm.value).subscribe(
+      this.AuthenticationService.login().subscribe(
         (result: any) => {
           console.log(result);
-          this.router.navigate(['/admin']);
+          debugger
+          const user = result.find((a:any)=>{
+            return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+          });
+          if(user){
+            debugger
+            this.AuthenticationService.setToken(user.role);
+            if(user.role==='admin'){
+              this.router.navigate(['admin'])
+            }else if(user.role==='mentor'){
+              this.router.navigate(['admin/mentor'])
+            }
+            else if(user.role==='intern'){
+              this.router.navigate(['admin/intern'])
+            }
+          
+            // alert("login success");
+            // this.loginForm.reset();
+            // this.router.navigate(['admin'])
+          }  
+          // switch(user.role){
+          //   case 1:
+          //     debugger
+          //     user.role==='admin'
+          //     this.router.navigate(['admin'])
+          //     break;
+          //   case 2:
+          //     debugger
+          //     user.role==='mentor'
+          //     this.router.navigate(['mentor'])
+          //     break;
+          //   case 3:
+          //     debugger
+          //     user.role==='intern'
+          //     this.router.navigate(['intren'])
+          //     break;
+          // }  
         },
         (err: Error) => {
           alert(err.message);

@@ -14,6 +14,7 @@ import { RoleguardGuard } from './roleguard.guard';
 import { AuthenticationService } from './authentication.service';
 import { HomeComponent } from './home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { HomeComponent } from './home/home.component';
   
     SignupComponent,
        HomeComponent,
+      
  
 
 

@@ -1,52 +1,28 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "signup": [
     {
-      "fullname": "darpanparmar",
-      "email": "darpan5777@gmail.com",
+      "fullname": "DarpanParmar",
+      "email": "darpan@gmail.com",
       "mobile": "9687177725",
-      "password": "1234",
+      "password": "12345",
       "id": 1,
       "role": "admin"
     },
     {
-      "fullname": "",
-      "email": "darpan5777@gmail.com",
+      "fullname": "Ankit Prajapati",
+      "email": "ankit@gmail.com",
       "password": "12345",
-      "mobile": "",
+      "mobile": "6547893210",
       "id": 2,
-      "role":"admin"
+      "role": "mentor"
     },
     {
-      "fullname": "Darpan Parmar",
-      "email": "bhavik5777@gmail.com",
-      "password": "1234",
+      "fullname": "Bhavik Gajdhar",
+      "email": "bhavik@gmail.com",
+      "password": "12345",
       "mobile": 9687177725,
       "id": 3,
-      "role":"mentor"
-    },
-    {
-      "fullname": "Darpan Parmar",
-      "email": "ankit5777@gmail.com",
-      "password": "1234",
-      "mobile": 9687177725,
-      "id": 3,
-      "role":"intern"
+      "role": "intern"
     }
-  ]}
+  ]
+}
